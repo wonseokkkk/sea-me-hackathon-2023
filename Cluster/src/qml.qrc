@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>image/car1.png</file>
+        <file>image/dial.png</file>
+        <file>image/rpm.png</file>
+        <file>image/star.png</file>
+        <file>image/volk.png</file>
+        <file>image/warning.png</file>
+        <file>image/black.png</file>
+        <file>image/cover.png</file>
+        <file>image/tmp_14.png</file>
+        <file>image/coverr.png</file>
+        <file>image/tmp_20.png</file>
+        <file>image/tmp_26.png</file>
+        <file>image/tmp_27.png</file>
+        <file>image/tmp_22.png</file>
+        <file>image/cover_re.png</file>
+    </qresource>
+</RCC>

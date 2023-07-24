@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>image/off.png</file>
+        <file>image/on.png</file>
+        <file>image/warn.png</file>
+        <file>image/warn1.png</file>
+        <file>image/weather.png</file>
+        <file>image/weather1.png</file>
+        <file>image/offCruise.png</file>
+        <file>image/onCruise.png</file>
+        <file>image/1217.png</file>
+        <file>image/controlBackGrey.png</file>
+        <file>image/1217r.png</file>
+        <file>image/bu1.png</file>
+        <file>image/bu2.png</file>
+        <file>image/auto.png</file>
+        <file>image/navigate.png</file>
+        <file>image/ultra.jpg</file>
+        <file>image/untra.png</file>
+        <file>image/Autodrive_off.png</file>
+        <file>image/Autodrive_on.png</file>
+    </qresource>
+</RCC>
