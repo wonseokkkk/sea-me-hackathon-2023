@@ -2,6 +2,7 @@ import QtQuick 2.7
 import QtQuick.Controls 2.2
 import "."
 import QtMultimedia 5.5
+<<<<<<< HEAD
 import QtWebEngine 1.5
 import QtWebView 1.0
 
@@ -11,10 +12,19 @@ ApplicationWindow {
     height: 920
     //screen.height
     //property alias gearImage: gearImage
+=======
+
+ApplicationWindow {
+    visible: true
+    width: screen.width
+    height: screen.height
+    property alias gearImage: gearImage
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
     property string bState: "P"
     property bool showWeather: false
     property bool showWarn: false
     property bool showLight: false
+<<<<<<< HEAD
     property bool showYOUTUBE: false
     property bool showCruise: false
     property bool showMode: true
@@ -25,11 +35,14 @@ ApplicationWindow {
     property bool showState: false
     property bool showKakaoMap: true
     property bool showSonic: false
+=======
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
     title: qsTr("Speedometer")
 
     // Background Image
     Image {
         id: backgroundImage
+<<<<<<< HEAD
 
         source  : showMode ? "image/tmp_14.png" : "image/tmp_27.png"
 
@@ -154,10 +167,56 @@ ApplicationWindow {
         height: 80
         anchors.verticalCenterOffset: 402
         anchors.horizontalCenterOffset: -244
+=======
+        anchors.fill: parent
+        source: "image/back.png" // Replace with the path to your background image
+    }
+    // speed gage
+    Image {
+        id: speedImage
+        width: 590
+        height: 590
+        anchors.verticalCenterOffset: -175
+        anchors.horizontalCenterOffset: -548
+        anchors.centerIn: parent
+        source: "image/dial.png" // Replace with the path to your arc image
+    }
+    Image {
+        id: rpmImage
+        width: 550
+        height: 550
+        anchors.verticalCenterOffset: -185
+        anchors.horizontalCenterOffset: 527
+        anchors.centerIn: parent
+        source: "image/rpm.png" // Replace with the path to your arc image
+    }
+    // Car Image
+    Image {
+        id: carImage
+        y: -484
+        width: 412 // Adjust the width of the car image
+        height: 299
+        anchors.horizontalCenterOffset: 0
+        anchors.bottomMargin: 185 // Adjust the height of the car image
+        source: "image/car1.png" // Replace with the path to your car image
+        anchors {
+            bottom: parent.bottom
+            horizontalCenter: parent.horizontalCenter
+            margins: 20
+        }
+    }
+    Image {
+        id: weatherIcon
+        width: 166
+        height: 166
+        anchors.verticalCenterOffset: -46
+        anchors.horizontalCenterOffset: 0
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
         anchors.centerIn: parent
         source: weatherAPI.weatherIcon
         visible: showWeather
     }
+<<<<<<< HEAD
 */
 
 
@@ -185,6 +244,14 @@ ApplicationWindow {
         height: 100
         anchors.verticalCenterOffset: -392
         anchors.horizontalCenterOffset: -16
+=======
+    Image {
+        id: warnIcon
+        width: 864
+        height: 80
+        anchors.verticalCenterOffset: -506
+        anchors.horizontalCenterOffset: 0
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
         anchors.centerIn: parent
         source: "image/warning.png"
         visible: showWarn
@@ -200,16 +267,24 @@ ApplicationWindow {
     }
     Image {
         id: lightIcon
+<<<<<<< HEAD
         y: 18
         width: 80
         height: 80
         anchors.verticalCenterOffset: -392
         anchors.horizontalCenterOffset: -164
+=======
+        width: 80
+        height: 80
+        anchors.verticalCenterOffset: -506
+        anchors.horizontalCenterOffset: -548
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
         anchors.centerIn: parent
         source: "image/star.png"
         visible: showLight
     }
 
+<<<<<<< HEAD
     Canvas {
         id: rpmpointer
         x: 9
@@ -221,6 +296,30 @@ ApplicationWindow {
         rotation: 180
         opacity:0.5
         //anchors.centerIn: parent
+=======
+    Text {
+        id: temperature
+        font.pixelSize: 40
+        font.bold: true
+        font.italic: true
+        color: 'white'
+        anchors.horizontalCenter: weatherIcon.horizontalCenter
+        anchors.top: weatherIcon.bottom
+        anchors.topMargin: -40
+        text: weatherAPI.temperature + "°C"
+        anchors.horizontalCenterOffset: 1
+        visible: showWeather
+    }
+
+    Canvas {
+        id: speedpointer
+        width: parent.width
+        height: parent.height
+        anchors.verticalCenterOffset: -170
+        anchors.horizontalCenterOffset: -548
+        rotation: 180
+        anchors.centerIn: parent
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
         onPaint: {
             var ctx = getContext('2d');
             var centerX = width / 2;
@@ -230,6 +329,7 @@ ApplicationWindow {
             ctx.clearRect(0, 0, width, height);
 
             // Draw the speed bar
+<<<<<<< HEAD
             var startAngle=-23*Math.PI/166
             var endAngle=(rpmReceiver.rpmValue/28 -23)*Math.PI/166;
             var gradient = ctx.createLinearGradient(centerX,centerY,centerX+293*Math.cos(endAngle),centerY+293*Math.sin(endAngle));
@@ -255,6 +355,48 @@ ApplicationWindow {
             ctx.arc(centerX,centerY,300,startAngle,endAngle);
             ctx.lineWidth = 15;
             ctx.strokeStyle = gradient;
+=======
+            var angle = (speedReceiver.speedValue - 35) * Math.PI / 180; // Convert speed to angle
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX + 160 * Math.cos(angle), centerY + 160 * Math.sin(angle));
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = '#ff0000';
+            ctx.stroke();
+        }
+
+        Connections {
+            target: speedReceiver
+            onSpeedValueChanged: {
+                speedpointer.requestPaint()
+            }
+        }
+    }
+
+    Canvas {
+        id: rpmpointer
+        width: parent.width
+        height: parent.height
+        anchors.verticalCenterOffset: -185
+        anchors.horizontalCenterOffset: 527
+        rotation: 180
+        anchors.centerIn: parent
+        onPaint: {
+            var ctx = getContext('2d');
+            var centerX = width / 2;
+            var centerY = height / 2;
+
+            // Clear the canvas
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw the speed bar
+            var angle = ((rpmReceiver.rpmValue / 30) -45) * Math.PI / 180; // Convert rpm to angle
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX + 135 * Math.cos(angle), centerY + 135 * Math.sin(angle));
+            ctx.lineWidth = 7;
+            ctx.strokeStyle = '#ff0000';
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
             ctx.stroke();
         }
 
@@ -265,6 +407,7 @@ ApplicationWindow {
             }
         }
     }
+<<<<<<< HEAD
 
 
     Image
@@ -325,10 +468,26 @@ ApplicationWindow {
             text: "P"
             color: showMode ? 'white' : 'black'
             visible : showP
+=======
+    Row {
+        anchors.verticalCenterOffset: 486
+        anchors.horizontalCenterOffset: 0
+        anchors.centerIn: parent
+        spacing: 10
+
+        Text {
+            id: pText
+            font.pixelSize: 130
+            font.italic: true
+            font.bold: true
+            text: "P"
+            color: 'red'
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
         }
 
         Text {
             id: rText
+<<<<<<< HEAD
             x:1130
             y:830
             width: 80
@@ -340,10 +499,18 @@ ApplicationWindow {
             text: "R"
             color: showMode ? 'white' : 'black'
             visible : showR
+=======
+            font.pixelSize: 130
+            font.italic: true
+            font.bold: true
+            text: "R"
+            color: 'white'
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
         }
 
         Text {
             id: nText
+<<<<<<< HEAD
             x:1130
             y:830
             width: 80
@@ -355,10 +522,18 @@ ApplicationWindow {
             text: "N"
             color: showMode ? 'white' : 'black'
             visible : showN
+=======
+            font.pixelSize: 130
+            font.italic: true
+            font.bold: true
+            text: "N"
+            color: 'white'
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
         }
 
         Text {
             id: dText
+<<<<<<< HEAD
             x:1130
             y:830
             width: 80
@@ -370,6 +545,13 @@ ApplicationWindow {
             text: "D"
             color: showMode ? 'white' : 'black'
             visible : showD
+=======
+            font.pixelSize: 130
+            font.italic: true
+            font.bold: true
+            text: "D"
+            color: 'white'
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
         }
 
         Connections {
@@ -377,6 +559,7 @@ ApplicationWindow {
             onButtonsValueChanged: {
                 var buttonValue = buttonsReceiver.buttonsValue;
 
+<<<<<<< HEAD
                 bState = buttonValue;
                 if (buttonValue === "P" || buttonValue === "R" || buttonValue === "N" || buttonValue === "D") {
 
@@ -408,6 +591,17 @@ ApplicationWindow {
                 else if(buttonValue==="D")
                 {
                     showD=!showD
+=======
+                if (buttonValue === "P" || buttonValue === "R" || buttonValue === "N" || buttonValue === "D") {
+                    bState = buttonValue;
+                    pText.color = bState === "P" ? 'red' : 'white';
+                    rText.color = bState === "R" ? 'red' : 'white';
+                    nText.color = bState === "N" ? 'red' : 'white';
+                    dText.color = bState === "D" ? 'red' : 'white';
+
+                    gearImage.visible = bState === "P";
+                    videoOutput.visible = bState === "R";
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
                 }
                 else if(buttonValue === "Weather"){
                     showWeather = !showWeather;
@@ -425,6 +619,7 @@ ApplicationWindow {
                 else if(buttonValue === "Light"){
                     showLight = !showLight;
                 }
+<<<<<<< HEAD
                 else if(buttonValue === "Autodrive"){
                     showYOUTUBE = !showYOUTUBE;
                 }
@@ -449,11 +644,14 @@ ApplicationWindow {
                 {
                     speedReceiver.speedValue=0;
                 }
+=======
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
             }
         }
 
     }
 
+<<<<<<< HEAD
 
 
 
@@ -537,4 +735,34 @@ ApplicationWindow {
 
 
 
+=======
+    Image {
+        id: gearImage
+        width: 450
+        height: 450
+        scale: 1
+        anchors.verticalCenterOffset: -334
+        anchors.horizontalCenterOffset: 1
+        anchors.centerIn: parent
+        source: "image/volk.png" // Replace with the path to your image
+        visible: bState === "P"
+    }
+
+    Camera {
+        id: camera
+        deviceId: "/dev/video1"
+    }
+
+    VideoOutput {
+        id: videoOutput
+        width: 492 // Set width of the camera output
+        height: 441
+        anchors.verticalCenterOffset: -334
+        anchors.horizontalCenterOffset: 0 // Set height of the camera output
+        anchors.horizontalCenter: parent.horizontalCenter // Center the output horizontally
+        anchors.verticalCenter: parent.verticalCenter // Center the output vertically
+        source: camera
+        visible: bState === "R"
+    }
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
 }

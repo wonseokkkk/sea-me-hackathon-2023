@@ -8,6 +8,7 @@
         <file>image/star.png</file>
         <file>image/volk.png</file>
         <file>image/warning.png</file>
+<<<<<<< HEAD
         <file>image/karina.png</file>
         <file>image/black.png</file>
         <file>image/cover_re.png</file>
@@ -21,5 +22,7 @@
         <file>image/ultra.png</file>
         <file>image/Removal-289.png</file>
         <file>image/Removal-661.png</file>
+=======
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
     </qresource>
 </RCC>

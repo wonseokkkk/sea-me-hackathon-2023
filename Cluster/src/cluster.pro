@@ -2,9 +2,12 @@ QT += quick
 CONFIG += c++11
 QT += multimedia
 QT += network
+<<<<<<< HEAD
 QT += webengine
 QT += webenginewidgets
 
+=======
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -24,8 +27,12 @@ SOURCES += main.cpp \
     ClusterStubImpl.cpp \
     ButtonsReceiver.cpp \
     SpeedReceiver.cpp \
+<<<<<<< HEAD
     RPMReceiver.cpp \
     YoutubeAPI.cpp
+=======
+    RPMReceiver.cpp
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
 
 RESOURCES += qml.qrc
 
@@ -74,9 +81,13 @@ HEADERS += \
     ClusterStubImpl.hpp \
     ButtonsReceiver.h \
     RPMReceiver.h \
+<<<<<<< HEAD
     SpeedReceiver.h \
     YoutubeAPI.h
 
 
 DISTFILES += \
     YoutubeAPI
+=======
+    SpeedReceiver.h
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
