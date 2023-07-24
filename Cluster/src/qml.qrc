@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>image/back.png</file>
+        <file>image/car1.png</file>
+        <file>image/dial.png</file>
+        <file>image/rpm.png</file>
+        <file>image/star.png</file>
+        <file>image/volk.png</file>
+        <file>image/warning.png</file>
+        <file>image/karina.png</file>
+        <file>image/black.png</file>
+        <file>image/cover_re.png</file>
+        <file>image/tmp_14.png</file>
+        <file>image/tmp_20.png</file>
+        <file>image/tmp_27.png</file>
+        <file>../../../Downloads/Removal-219.png</file>
+        <file>../../../Downloads/Removal-413.png</file>
+        <file>image/Removal-219.png</file>
+        <file>image/Removal-413.png</file>
+        <file>image/ultra.png</file>
+        <file>image/Removal-289.png</file>
+        <file>image/Removal-661.png</file>
+    </qresource>
+</RCC>
