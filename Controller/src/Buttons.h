@@ -3,9 +3,15 @@
 
 #include <QObject>
 #include <iostream>
+<<<<<<< HEAD
 #include <fstream>
 #include <cstdlib>
 
+=======
+
+
+#include <iostream>
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 #include <string>
 #include <unistd.h>
 #include <CommonAPI/CommonAPI.hpp>

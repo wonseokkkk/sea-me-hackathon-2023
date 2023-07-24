@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 {
    "unicast" : "192.168.68.76",
+=======
+{ 
+   "unicast" : "192.168.0.57",
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
     "logging" :
     {
         "level" : "debug",
@@ -18,7 +23,11 @@
     "service-discovery" :
     {
         "enable" : "true",
+<<<<<<< HEAD
         "multicast" : "224.244.224.241",
+=======
+        "multicast" : "224.244.224.243",
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
         "port" : "30490",
         "protocol" : "udp"
     }

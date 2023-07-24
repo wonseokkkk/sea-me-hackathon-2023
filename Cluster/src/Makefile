@@ -12,10 +12,17 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
+<<<<<<< HEAD
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_QUICK_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -I../../src-gen-cluster -I../../../build-commonapi/capicxx-core-runtime/include -I../../../build-commonapi/capicxx-someip-runtime/include -I../../../build-commonapi/vsomeip/interface -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtQuick -isystem /usr/include/x86_64-linux-gnu/qt5/QtMultimedia -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtQml -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+=======
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WEBENGINE_LIB -DQT_WEBENGINEWIDGETS_LIB -DQT_WEBENGINECORE_LIB -DQT_QUICK_LIB -DQT_MULTIMEDIA_LIB -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_WEBCHANNEL_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_POSITIONING_LIB -DQT_CORE_LIB
+CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+INCPATH       = -I. -I../../src-gen-cluster -isystem /usr/local/include/CommonAPI-3.2 -isystem /usr/local/include/CommonAPI-3.2 -isystem /usr/local/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWebEngine -isystem /usr/include/aarch64-linux-gnu/qt5/QtWebEngineWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtWebEngineCore -isystem /usr/include/aarch64-linux-gnu/qt5/QtQuick -isystem /usr/include/aarch64-linux-gnu/qt5/QtMultimedia -isystem /usr/include/aarch64-linux-gnu/qt5/QtPrintSupport -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtWebChannel -isystem /usr/include/aarch64-linux-gnu/qt5/QtQml -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -isystem /usr/include/aarch64-linux-gnu/qt5/QtPositioning -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -I. -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,8 +44,13 @@ COMPRESS      = gzip -9f
 DISTNAME      = cluster1.0.0
 DISTDIR = /home/sea/sea-me-hackathon-2023/Cluster/src/.tmp/cluster1.0.0
 LINK          = g++
+<<<<<<< HEAD
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) -L/home/sea/sea-me-hackathon-2023/Cluster/src/../../../build-commonapi/capicxx-core-runtime/build/ -lCommonAPI -L/home/sea/sea-me-hackathon-2023/Cluster/src/../../../build-commonapi/capicxx-someip-runtime/build/ -lCommonAPI-SomeIP -L/home/sea/sea-me-hackathon-2023/Cluster/src/../../../build-commonapi/vsomeip/build/ -lvsomeip3 -lQt5Quick -lQt5Multimedia -lQt5Gui -lQt5Qml -lQt5Network -lQt5Core -lGL -lpthread 
+=======
+LFLAGS        = -Wl,-O1 -Wl,-rpath-link,/usr/lib/aarch64-linux-gnu
+LIBS          = $(SUBLIBS) -L/usr/local/lib/ -lCommonAPI -lCommonAPI-SomeIP -lvsomeip3 -lQt5WebEngine -lQt5WebEngineWidgets -lQt5WebEngineCore -lQt5Quick -lQt5Multimedia -lQt5PrintSupport -lQt5Widgets -lQt5Gui -lQt5WebChannel -lQt5Qml -lQt5Network -lQt5Positioning -lQt5Core -lGLESv2 -lpthread 
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -58,12 +70,22 @@ SOURCES       = main.cpp \
 		ClusterStubImpl.cpp \
 		ButtonsReceiver.cpp \
 		SpeedReceiver.cpp \
+<<<<<<< HEAD
 		RPMReceiver.cpp qrc_qml.cpp \
+=======
+		RPMReceiver.cpp \
+		YoutubeAPI.cpp qrc_qml.cpp \
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 		moc_WeatherAPI.cpp \
 		moc_ClusterStubImpl.cpp \
 		moc_ButtonsReceiver.cpp \
 		moc_RPMReceiver.cpp \
+<<<<<<< HEAD
 		moc_SpeedReceiver.cpp
+=======
+		moc_SpeedReceiver.cpp \
+		moc_YoutubeAPI.cpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 OBJECTS       = main.o \
 		ClusterSomeIPDeployment.o \
 		ClusterSomeIPProxy.o \
@@ -73,11 +95,16 @@ OBJECTS       = main.o \
 		ButtonsReceiver.o \
 		SpeedReceiver.o \
 		RPMReceiver.o \
+<<<<<<< HEAD
+=======
+		YoutubeAPI.o \
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 		qrc_qml.o \
 		moc_WeatherAPI.o \
 		moc_ClusterStubImpl.o \
 		moc_ButtonsReceiver.o \
 		moc_RPMReceiver.o \
+<<<<<<< HEAD
 		moc_SpeedReceiver.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -157,6 +184,96 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
+=======
+		moc_SpeedReceiver.o \
+		moc_YoutubeAPI.o
+DIST          = YoutubeAPI \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/unix.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/linux.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/sanitize.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/gcc-base.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/gcc-base-unix.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/g++-base.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/g++-unix.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/qconfig.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_core_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_egl_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfs_kms_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_fb_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_positioning.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webchannel.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webengine.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webenginecore.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt_functions.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/default_post.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/resources.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/moc.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/uic.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qmake_use.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/file_copies.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/yacc.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/lex.prf \
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 		cluster.pro ../../src-gen-cluster/v1/commonapi/Cluster.hpp \
 		../../src-gen-cluster/v1/commonapi/ClusterProxy.hpp \
 		../../src-gen-cluster/v1/commonapi/ClusterProxyBase.hpp \
@@ -169,7 +286,12 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		ClusterStubImpl.hpp \
 		ButtonsReceiver.h \
 		RPMReceiver.h \
+<<<<<<< HEAD
 		SpeedReceiver.h main.cpp \
+=======
+		SpeedReceiver.h \
+		YoutubeAPI.h main.cpp \
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 		../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeployment.cpp \
 		../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.cpp \
 		../../src-gen-cluster/v1/commonapi/ClusterSomeIPStubAdapter.cpp \
@@ -177,7 +299,12 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		ClusterStubImpl.cpp \
 		ButtonsReceiver.cpp \
 		SpeedReceiver.cpp \
+<<<<<<< HEAD
 		RPMReceiver.cpp
+=======
+		RPMReceiver.cpp \
+		YoutubeAPI.cpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 QMAKE_TARGET  = cluster
 DESTDIR       = 
 TARGET        = cluster
@@ -189,6 +316,7 @@ first: all
 $(TARGET):  $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
+<<<<<<< HEAD
 Makefile: cluster.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -362,6 +490,209 @@ qml.qrc:
 /usr/lib/x86_64-linux-gnu/libQt5Qml.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Network.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Core.prl:
+=======
+Makefile: cluster.pro /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/unix.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/linux.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/sanitize.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/gcc-base.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/gcc-base-unix.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/g++-base.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/g++-unix.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/qconfig.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_core_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_egl_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfs_kms_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_fb_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_positioning.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webchannel.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webengine.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webenginecore.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt_functions.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/default_post.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/resources.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/moc.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/uic.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qmake_use.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/file_copies.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/yacc.prf \
+		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/lex.prf \
+		cluster.pro \
+		qml.qrc \
+		/usr/lib/aarch64-linux-gnu/libQt5WebEngine.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5WebEngineWidgets.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5WebEngineCore.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5Quick.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5Multimedia.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5PrintSupport.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5Widgets.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5Gui.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5WebChannel.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5Qml.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5Network.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5Positioning.prl \
+		/usr/lib/aarch64-linux-gnu/libQt5Core.prl
+	$(QMAKE) -o Makefile cluster.pro
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/unix.conf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/linux.conf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/sanitize.conf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/gcc-base.conf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/gcc-base-unix.conf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/g++-base.conf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/g++-unix.conf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/qconfig.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_core_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_egl_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfs_kms_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_fb_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_positioning.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webchannel.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webengine.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webenginecore.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webenginewidgets.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkit.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt_functions.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/default_post.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/warn_on.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qt.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/resources.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/moc.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/uic.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/unix/thread.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/qmake_use.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/file_copies.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/exceptions.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/yacc.prf:
+/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/lex.prf:
+cluster.pro:
+qml.qrc:
+/usr/lib/aarch64-linux-gnu/libQt5WebEngine.prl:
+/usr/lib/aarch64-linux-gnu/libQt5WebEngineWidgets.prl:
+/usr/lib/aarch64-linux-gnu/libQt5WebEngineCore.prl:
+/usr/lib/aarch64-linux-gnu/libQt5Quick.prl:
+/usr/lib/aarch64-linux-gnu/libQt5Multimedia.prl:
+/usr/lib/aarch64-linux-gnu/libQt5PrintSupport.prl:
+/usr/lib/aarch64-linux-gnu/libQt5Widgets.prl:
+/usr/lib/aarch64-linux-gnu/libQt5Gui.prl:
+/usr/lib/aarch64-linux-gnu/libQt5WebChannel.prl:
+/usr/lib/aarch64-linux-gnu/libQt5Qml.prl:
+/usr/lib/aarch64-linux-gnu/libQt5Network.prl:
+/usr/lib/aarch64-linux-gnu/libQt5Positioning.prl:
+/usr/lib/aarch64-linux-gnu/libQt5Core.prl:
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 qmake: FORCE
 	@$(QMAKE) -o Makefile cluster.pro
 
@@ -377,9 +708,15 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents qml.qrc $(DISTDIR)/
+<<<<<<< HEAD
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../../src-gen-cluster/v1/commonapi/Cluster.hpp ../../src-gen-cluster/v1/commonapi/ClusterProxy.hpp ../../src-gen-cluster/v1/commonapi/ClusterProxyBase.hpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeployment.hpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.hpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPStubAdapter.hpp ../../src-gen-cluster/v1/commonapi/ClusterStub.hpp ../../src-gen-cluster/v1/commonapi/ClusterStubDefault.hpp WeatherAPI.h ClusterStubImpl.hpp ButtonsReceiver.h RPMReceiver.h SpeedReceiver.h $(DISTDIR)/
 	$(COPY_FILE) --parents main.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeployment.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPStubAdapter.cpp WeatherAPI.cpp ClusterStubImpl.cpp ButtonsReceiver.cpp SpeedReceiver.cpp RPMReceiver.cpp $(DISTDIR)/
+=======
+	$(COPY_FILE) --parents /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../src-gen-cluster/v1/commonapi/Cluster.hpp ../../src-gen-cluster/v1/commonapi/ClusterProxy.hpp ../../src-gen-cluster/v1/commonapi/ClusterProxyBase.hpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeployment.hpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.hpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPStubAdapter.hpp ../../src-gen-cluster/v1/commonapi/ClusterStub.hpp ../../src-gen-cluster/v1/commonapi/ClusterStubDefault.hpp WeatherAPI.h ClusterStubImpl.hpp ButtonsReceiver.h RPMReceiver.h SpeedReceiver.h YoutubeAPI.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeployment.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPStubAdapter.cpp WeatherAPI.cpp ClusterStubImpl.cpp ButtonsReceiver.cpp SpeedReceiver.cpp RPMReceiver.cpp YoutubeAPI.cpp $(DISTDIR)/
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 
 
 clean: compiler_clean 
@@ -409,6 +746,7 @@ compiler_rcc_clean:
 qrc_qml.cpp: qml.qrc \
 		/usr/lib/qt5/bin/rcc \
 		main.qml \
+<<<<<<< HEAD
 		image/cover.png \
 		image/cover_re.png \
 		image/tmp_20.png \
@@ -424,11 +762,34 @@ qrc_qml.cpp: qml.qrc \
 		image/tmp_22.png \
 		image/dial.png \
 		image/tmp_26.png
+=======
+		image/karina.png \
+		image/warning.png \
+		image/Removal-661.png \
+		image/black.png \
+		image/star.png \
+		image/Removal-413.png \
+		image/Removal-289.png \
+		image/Removal-219.png \
+		image/volk.png \
+		image/rpm.png \
+		image/tmp_20.png \
+		image/dial.png \
+		image/tmp_27.png \
+		image/cover_re.png \
+		image/tmp_14.png \
+		image/back.png \
+		image/car1.png \
+		image/ultra.png \
+		../../../Downloads/Removal-219.png \
+		../../../Downloads/Removal-413.png
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 	/usr/lib/qt5/bin/rcc -name qml qml.qrc -o qrc_qml.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
+<<<<<<< HEAD
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
@@ -464,24 +825,66 @@ moc_ClusterStubImpl.cpp: ../../../build-commonapi/capicxx-core-runtime/include/C
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/home/sea/build-commonapi/capicxx-core-runtime/include -I/home/sea/build-commonapi/capicxx-someip-runtime/include -I/home/sea/build-commonapi/vsomeip/interface -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtQuick -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ClusterStubImpl.hpp -o moc_ClusterStubImpl.cpp
+=======
+moc_predefs.h: /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+	g++ -pipe -O2 -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+
+compiler_moc_header_make_all: moc_WeatherAPI.cpp moc_ClusterStubImpl.cpp moc_ButtonsReceiver.cpp moc_RPMReceiver.cpp moc_SpeedReceiver.cpp moc_YoutubeAPI.cpp
+compiler_moc_header_clean:
+	-$(DEL_FILE) moc_WeatherAPI.cpp moc_ClusterStubImpl.cpp moc_ButtonsReceiver.cpp moc_RPMReceiver.cpp moc_SpeedReceiver.cpp moc_YoutubeAPI.cpp
+moc_WeatherAPI.cpp: WeatherAPI.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngine -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineCore -I/usr/include/aarch64-linux-gnu/qt5/QtQuick -I/usr/include/aarch64-linux-gnu/qt5/QtMultimedia -I/usr/include/aarch64-linux-gnu/qt5/QtPrintSupport -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtWebChannel -I/usr/include/aarch64-linux-gnu/qt5/QtQml -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtPositioning -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/aarch64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/aarch64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed -I/usr/include/aarch64-linux-gnu -I/usr/include WeatherAPI.h -o moc_WeatherAPI.cpp
+
+moc_ClusterStubImpl.cpp: ../../src-gen-cluster/v1/commonapi/ClusterStubDefault.hpp \
+		../../src-gen-cluster/v1/commonapi/ClusterStub.hpp \
+		../../src-gen-cluster/v1/commonapi/Cluster.hpp \
+		ClusterStubImpl.hpp \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngine -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineCore -I/usr/include/aarch64-linux-gnu/qt5/QtQuick -I/usr/include/aarch64-linux-gnu/qt5/QtMultimedia -I/usr/include/aarch64-linux-gnu/qt5/QtPrintSupport -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtWebChannel -I/usr/include/aarch64-linux-gnu/qt5/QtQml -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtPositioning -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/aarch64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/aarch64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed -I/usr/include/aarch64-linux-gnu -I/usr/include ClusterStubImpl.hpp -o moc_ClusterStubImpl.cpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 
 moc_ButtonsReceiver.cpp: ButtonsReceiver.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
+<<<<<<< HEAD
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/home/sea/build-commonapi/capicxx-core-runtime/include -I/home/sea/build-commonapi/capicxx-someip-runtime/include -I/home/sea/build-commonapi/vsomeip/interface -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtQuick -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ButtonsReceiver.h -o moc_ButtonsReceiver.cpp
+=======
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngine -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineCore -I/usr/include/aarch64-linux-gnu/qt5/QtQuick -I/usr/include/aarch64-linux-gnu/qt5/QtMultimedia -I/usr/include/aarch64-linux-gnu/qt5/QtPrintSupport -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtWebChannel -I/usr/include/aarch64-linux-gnu/qt5/QtQml -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtPositioning -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/aarch64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/aarch64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed -I/usr/include/aarch64-linux-gnu -I/usr/include ButtonsReceiver.h -o moc_ButtonsReceiver.cpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 
 moc_RPMReceiver.cpp: RPMReceiver.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
+<<<<<<< HEAD
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/home/sea/build-commonapi/capicxx-core-runtime/include -I/home/sea/build-commonapi/capicxx-someip-runtime/include -I/home/sea/build-commonapi/vsomeip/interface -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtQuick -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include RPMReceiver.h -o moc_RPMReceiver.cpp
+=======
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngine -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineCore -I/usr/include/aarch64-linux-gnu/qt5/QtQuick -I/usr/include/aarch64-linux-gnu/qt5/QtMultimedia -I/usr/include/aarch64-linux-gnu/qt5/QtPrintSupport -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtWebChannel -I/usr/include/aarch64-linux-gnu/qt5/QtQml -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtPositioning -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/aarch64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/aarch64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed -I/usr/include/aarch64-linux-gnu -I/usr/include RPMReceiver.h -o moc_RPMReceiver.cpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 
 moc_SpeedReceiver.cpp: SpeedReceiver.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
+<<<<<<< HEAD
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/home/sea/build-commonapi/capicxx-core-runtime/include -I/home/sea/build-commonapi/capicxx-someip-runtime/include -I/home/sea/build-commonapi/vsomeip/interface -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtQuick -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include SpeedReceiver.h -o moc_SpeedReceiver.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
+=======
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngine -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineCore -I/usr/include/aarch64-linux-gnu/qt5/QtQuick -I/usr/include/aarch64-linux-gnu/qt5/QtMultimedia -I/usr/include/aarch64-linux-gnu/qt5/QtPrintSupport -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtWebChannel -I/usr/include/aarch64-linux-gnu/qt5/QtQml -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtPositioning -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/aarch64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/aarch64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed -I/usr/include/aarch64-linux-gnu -I/usr/include SpeedReceiver.h -o moc_SpeedReceiver.cpp
+
+moc_YoutubeAPI.cpp: YoutubeAPI.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/sea/sea-me-hackathon-2023/Cluster/src -I/home/sea/sea-me-hackathon-2023/src-gen-cluster -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include/CommonAPI-3.2 -I/usr/local/include -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngine -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtWebEngineCore -I/usr/include/aarch64-linux-gnu/qt5/QtQuick -I/usr/include/aarch64-linux-gnu/qt5/QtMultimedia -I/usr/include/aarch64-linux-gnu/qt5/QtPrintSupport -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtWebChannel -I/usr/include/aarch64-linux-gnu/qt5/QtQml -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include/aarch64-linux-gnu/qt5/QtPositioning -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/aarch64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/aarch64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed -I/usr/include/aarch64-linux-gnu -I/usr/include YoutubeAPI.h -o moc_YoutubeAPI.cpp
+
+compiler_moc_source_make_all:
+compiler_moc_source_clean:
+compiler_uic_make_all:
+compiler_uic_clean:
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
 compiler_yacc_impl_make_all:
@@ -495,6 +898,7 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 main.o: main.cpp SpeedReceiver.h \
 		ButtonsReceiver.h \
 		RPMReceiver.h \
+<<<<<<< HEAD
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/CommonAPI.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Address.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Export.hpp \
@@ -511,10 +915,13 @@ main.o: main.cpp SpeedReceiver.h \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/MainLoopContext.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Runtime.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Factory.hpp \
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 		ClusterStubImpl.hpp \
 		../../src-gen-cluster/v1/commonapi/ClusterStubDefault.hpp \
 		../../src-gen-cluster/v1/commonapi/ClusterStub.hpp \
 		../../src-gen-cluster/v1/commonapi/Cluster.hpp \
+<<<<<<< HEAD
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Stub.hpp \
 		WeatherAPI.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
@@ -523,10 +930,18 @@ ClusterSomeIPDeployment.o: ../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeplo
 		../../../build-commonapi/capicxx-someip-runtime/include/CommonAPI/SomeIP/Deployment.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Export.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Deployment.hpp
+=======
+		WeatherAPI.h \
+		YoutubeAPI.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
+
+ClusterSomeIPDeployment.o: ../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeployment.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeployment.hpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ClusterSomeIPDeployment.o ../../src-gen-cluster/v1/commonapi/ClusterSomeIPDeployment.cpp
 
 ClusterSomeIPProxy.o: ../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.hpp \
 		../../src-gen-cluster/v1/commonapi/ClusterProxyBase.hpp \
+<<<<<<< HEAD
 		../../src-gen-cluster/v1/commonapi/Cluster.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Types.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/ByteBuffer.hpp \
@@ -593,10 +1008,14 @@ ClusterSomeIPProxy.o: ../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.cpp 
 		../../../build-commonapi/capicxx-someip-runtime/include/CommonAPI/SomeIP/Watch.hpp \
 		../../../build-commonapi/capicxx-someip-runtime/include/CommonAPI/SomeIP/SubscriptionStatusWrapper.hpp \
 		../../../build-commonapi/capicxx-someip-runtime/include/CommonAPI/SomeIP/AddressTranslator.hpp
+=======
+		../../src-gen-cluster/v1/commonapi/Cluster.hpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ClusterSomeIPProxy.o ../../src-gen-cluster/v1/commonapi/ClusterSomeIPProxy.cpp
 
 ClusterSomeIPStubAdapter.o: ../../src-gen-cluster/v1/commonapi/ClusterSomeIPStubAdapter.cpp ../../src-gen-cluster/v1/commonapi/ClusterSomeIPStubAdapter.hpp \
 		../../src-gen-cluster/v1/commonapi/ClusterStub.hpp \
+<<<<<<< HEAD
 		../../src-gen-cluster/v1/commonapi/Cluster.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Types.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/ByteBuffer.hpp \
@@ -665,12 +1084,16 @@ ClusterSomeIPStubAdapter.o: ../../src-gen-cluster/v1/commonapi/ClusterSomeIPStub
 		../../../build-commonapi/capicxx-someip-runtime/include/CommonAPI/SomeIP/Factory.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Factory.hpp \
 		../../../build-commonapi/capicxx-someip-runtime/include/CommonAPI/SomeIP/Configuration.hpp
+=======
+		../../src-gen-cluster/v1/commonapi/Cluster.hpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ClusterSomeIPStubAdapter.o ../../src-gen-cluster/v1/commonapi/ClusterSomeIPStubAdapter.cpp
 
 WeatherAPI.o: WeatherAPI.cpp WeatherAPI.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o WeatherAPI.o WeatherAPI.cpp
 
 ClusterStubImpl.o: ClusterStubImpl.cpp ClusterStubImpl.hpp \
+<<<<<<< HEAD
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/CommonAPI.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Address.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Export.hpp \
@@ -691,6 +1114,12 @@ ClusterStubImpl.o: ClusterStubImpl.cpp ClusterStubImpl.hpp \
 		../../src-gen-cluster/v1/commonapi/ClusterStub.hpp \
 		../../src-gen-cluster/v1/commonapi/Cluster.hpp \
 		../../../build-commonapi/capicxx-core-runtime/include/CommonAPI/Stub.hpp
+=======
+		../../src-gen-cluster/v1/commonapi/ClusterStubDefault.hpp \
+		../../src-gen-cluster/v1/commonapi/ClusterStub.hpp \
+		../../src-gen-cluster/v1/commonapi/Cluster.hpp \
+		XOR.hpp
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ClusterStubImpl.o ClusterStubImpl.cpp
 
 ButtonsReceiver.o: ButtonsReceiver.cpp ButtonsReceiver.h
@@ -702,6 +1131,12 @@ SpeedReceiver.o: SpeedReceiver.cpp SpeedReceiver.h
 RPMReceiver.o: RPMReceiver.cpp RPMReceiver.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RPMReceiver.o RPMReceiver.cpp
 
+<<<<<<< HEAD
+=======
+YoutubeAPI.o: YoutubeAPI.cpp YoutubeAPI.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o YoutubeAPI.o YoutubeAPI.cpp
+
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 qrc_qml.o: qrc_qml.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_qml.o qrc_qml.cpp
 
@@ -720,6 +1155,12 @@ moc_RPMReceiver.o: moc_RPMReceiver.cpp
 moc_SpeedReceiver.o: moc_SpeedReceiver.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_SpeedReceiver.o moc_SpeedReceiver.cpp
 
+<<<<<<< HEAD
+=======
+moc_YoutubeAPI.o: moc_YoutubeAPI.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_YoutubeAPI.o moc_YoutubeAPI.cpp
+
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 ####### Install
 
 install_target: first FORCE

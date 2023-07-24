@@ -3,7 +3,10 @@ import QtQuick.Controls 2.2
 import com.seame.Speed 1.0
 import com.seame.Buttons 1.0
 import com.seame.RPM 1.0
+<<<<<<< HEAD
 import Qt.labs.folderlistmodel 2.0
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 
 ApplicationWindow {
     visible: true
@@ -25,6 +28,7 @@ ApplicationWindow {
         id: rpm
     }
 
+<<<<<<< HEAD
     Image
     {
         id : controlGrey
@@ -39,10 +43,19 @@ ApplicationWindow {
         height: 219
         rotation: 270
         anchors.verticalCenterOffset: -101
+=======
+    Slider {
+        id: speedBar
+        width: 631
+        height: 219
+        rotation: 270
+        anchors.verticalCenterOffset: -26
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
         anchors.horizontalCenterOffset: -236
         from: 0
         to: 260
         value: 0
+<<<<<<< HEAD
         property var cruiseValue : 0
 
         onValueChanged: {
@@ -82,10 +95,19 @@ ApplicationWindow {
 
 
 
+=======
+
+        onValueChanged: {
+            speed.adjustSpeed(speedBar.value);
+        }
+
+        anchors.centerIn: parent
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
     }
 
     Slider {
         id: rpmBar
+<<<<<<< HEAD
         width: 500
         height: 219
         rotation: 270
@@ -93,6 +115,15 @@ ApplicationWindow {
         anchors.horizontalCenterOffset: 231
         from: 0
         to: 6000
+=======
+        width: 631
+        height: 219
+        rotation: 270
+        anchors.verticalCenterOffset: -26
+        anchors.horizontalCenterOffset: 231
+        from: 0
+        to: 8000
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
         value: 0
 
         onValueChanged: {
@@ -104,8 +135,11 @@ ApplicationWindow {
 
     Column {
         id: orderButtons
+<<<<<<< HEAD
         anchors.verticalCenterOffset: -81
         anchors.horizontalCenterOffset: 0
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
         anchors.centerIn: parent
         spacing: 10
 
@@ -115,10 +149,13 @@ ApplicationWindow {
             onClicked: {
                 buttons.adjustButtons("P");
                 clickedButton = "P";
+<<<<<<< HEAD
                 buttonCruise.isToggled=false
                 source: buttonCruise.isToggled ? "image/onCruise.png" : "image/offCruise.png" // Use the state here
                 speed.adjustSpeed((0))
                 speedBar.value=0
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
             }
             width: 100
             height: 100
@@ -146,7 +183,10 @@ ApplicationWindow {
             onClicked: {
                 buttons.adjustButtons("R");
                 clickedButton = "R";
+<<<<<<< HEAD
                 buttonCruise.isToggled=false
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
             }
             width: 100
             height: 100
@@ -174,7 +214,10 @@ ApplicationWindow {
             onClicked: {
                 buttons.adjustButtons("N");
                 clickedButton = "N";
+<<<<<<< HEAD
                 buttonCruise.isToggled=false
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
             }
             width: 100
             height: 100
@@ -226,8 +269,13 @@ ApplicationWindow {
     Button {
         id: buttonWeather
         property bool isToggled: false
+<<<<<<< HEAD
         x: 372
         y: 691 // Add this line
+=======
+        x: 354
+        y: 826 // Add this line
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 
         onClicked: {
             buttons.adjustButtons("Weather");
@@ -251,7 +299,11 @@ ApplicationWindow {
         id: buttonWarn
         property bool isToggled: false
         x: 590
+<<<<<<< HEAD
         y: 681 // Add this line
+=======
+        y: 826 // Add this line
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 
         onClicked: {
             buttons.adjustButtons("Warn");
@@ -274,8 +326,13 @@ ApplicationWindow {
     Button {
         id: buttonLight
         property bool isToggled: false
+<<<<<<< HEAD
         x: 772
         y: 671 // Add this line
+=======
+        x: 771
+        y: 816 // Add this line
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
 
         onClicked: {
             buttons.adjustButtons("Light");
@@ -286,6 +343,7 @@ ApplicationWindow {
 
         contentItem: Image {
             id: starImage
+<<<<<<< HEAD
             width: 90
             height: 90
             source: buttonLight.isToggled ? "image/on.png" : "image/off.png" // Use the state here
@@ -402,6 +460,11 @@ ApplicationWindow {
             width: 100
             height: 100
             source: buttonModeChange.isToggled ? "image/1217.png" : "image/1217r.png" // Use the state here
+=======
+            width: 100
+            height: 100
+            source: buttonLight.isToggled ? "image/on.png" : "image/off.png" // Use the state here
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
         }
 
         background: Rectangle {
@@ -409,6 +472,7 @@ ApplicationWindow {
         }
     }
 
+<<<<<<< HEAD
 
     Button {
         id: autodrive
@@ -482,3 +546,23 @@ ApplicationWindow {
 }
 
 
+=======
+    Text {
+        id: text1
+        x: 350
+        y: 91
+        text: qsTr("Speed")
+        font.bold: true
+        font.pixelSize: 36
+    }
+
+    Text {
+        id: text2
+        x: 831
+        y: 91
+        text: qsTr("RPM")
+        font.bold: true
+        font.pixelSize: 36
+    }
+}
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96

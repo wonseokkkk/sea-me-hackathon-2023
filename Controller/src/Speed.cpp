@@ -9,6 +9,7 @@ Speed::Speed(QObject *parent) : QObject(parent)
         usleep(10);
 }
 
+<<<<<<< HEAD
 int readSpeedKey() {
     std::string filePath = "../../../HSM/speed_key.txt";
     std::ifstream file(filePath);
@@ -44,3 +45,14 @@ void Speed::adjustSpeed(int scrollValue)
     std::cout << "Check error: '" << result << "'\n";
 }
 
+=======
+void Speed::adjustSpeed(int scrollValue)
+{
+    int result;
+    CommonAPI::CallStatus callStatus;
+
+    std::cout << "Speed : " << scrollValue << std::endl;
+    myProxy->updateSpeed(scrollValue, callStatus, result);
+    std::cout << "Check error: '" << result << "'\n";
+}
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
