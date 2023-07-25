@@ -2,6 +2,18 @@ QT += quick
 CONFIG += c++11
 QT += multimedia
 QT += network
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+QT += webengine
+QT += webenginewidgets
+
+=======
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -21,7 +33,20 @@ SOURCES += main.cpp \
     ClusterStubImpl.cpp \
     ButtonsReceiver.cpp \
     SpeedReceiver.cpp \
+<<<<<<< HEAD
     RPMReceiver.cpp
+=======
+<<<<<<< HEAD
+    RPMReceiver.cpp
+=======
+<<<<<<< HEAD
+    RPMReceiver.cpp \
+    YoutubeAPI.cpp
+=======
+    RPMReceiver.cpp
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
 RESOURCES += qml.qrc
 
@@ -36,6 +61,31 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../build-commonapi/capicxx-core-runtime/build/release/ -lCommonAPI
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../build-commonapi/capicxx-core-runtime/build/debug/ -lCommonAPI
+else:unix: LIBS += -L$$PWD/../../../build-commonapi/capicxx-core-runtime/build/ -lCommonAPI
+
+INCLUDEPATH += $$PWD/../../../build-commonapi/capicxx-core-runtime/include
+DEPENDPATH += $$PWD/../../../build-commonapi/capicxx-core-runtime/include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../build-commonapi/capicxx-someip-runtime/build/release/ -lCommonAPI-SomeIP
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../build-commonapi/capicxx-someip-runtime/build/debug/ -lCommonAPI-SomeIP
+else:unix: LIBS += -L$$PWD/../../../build-commonapi/capicxx-someip-runtime/build/ -lCommonAPI-SomeIP
+
+INCLUDEPATH += $$PWD/../../../build-commonapi/capicxx-someip-runtime/include
+DEPENDPATH += $$PWD/../../../build-commonapi/capicxx-someip-runtime/include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../build-commonapi/vsomeip/build/release/ -lvsomeip3
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../build-commonapi/vsomeip/build/debug/ -lvsomeip3
+else:unix: LIBS += -L$$PWD/../../../build-commonapi/vsomeip/build/ -lvsomeip3
+
+INCLUDEPATH += $$PWD/../../../build-commonapi/vsomeip/interface
+DEPENDPATH += $$PWD/../../../build-commonapi/vsomeip/interface
+=======
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lCommonAPI
 else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/lib/debug/ -lCommonAPI
 else:unix: LIBS += -L/usr/local/lib/ -lCommonAPI
@@ -56,6 +106,10 @@ else:unix: LIBS += -L/usr/local/lib/ -lvsomeip3
 
 INCLUDEPATH += /usr/local/include
 DEPENDPATH += /usr/local/include
+<<<<<<< HEAD
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
 HEADERS += \
     ../../src-gen-cluster/v1/commonapi/Cluster.hpp \
@@ -70,4 +124,21 @@ HEADERS += \
     ClusterStubImpl.hpp \
     ButtonsReceiver.h \
     RPMReceiver.h \
+<<<<<<< HEAD
     SpeedReceiver.h
+=======
+<<<<<<< HEAD
+    SpeedReceiver.h
+=======
+<<<<<<< HEAD
+    SpeedReceiver.h \
+    YoutubeAPI.h
+
+
+DISTFILES += \
+    YoutubeAPI
+=======
+    SpeedReceiver.h
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765

@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# Execute Cluster
+
+<pre>
+<code>
+cd ~
+git clone https://github.com/AveesLab/sea-me-hackathon-2023.git
+cd sea-me-hackathon-2023/Cluster/src
+qmake .
+make -j2
+./cluster
+</code>
+</pre>
+<br><br>
+
+<img src="https://github.com/AveesLab/sea-me-hackathon-2023/assets/125881959/be0e03bd-65be-415f-8a5a-4ab4f92338c6" width="70%" height="50%" title="px(픽셀) 크기 설정" alt="execluster"></img><br><br>
+
+
+### Cluster display
+
+
+<img src="https://github.com/AveesLab/sea-me-hackathon-2023/assets/125881959/8dbbf171-107d-446d-9126-6078d5d3cce8" width="70%" height="50%" title="px(픽셀) 크기 설정" alt="displaycluster"></img>
+=======
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 # Cluster Settings
 You can run two executables [simultaneously on one device](#process-to-process-vsomeip-communication).<br>
 The json file is only required when applying communication between devices.<br>
@@ -91,3 +117,7 @@ chmod +x do_cluster.sh // Commands with 'do_~.sh' are intended to be executed by
 ### Cluster display
 <img src="https://github.com/AveesLab/sea-me-hackathon-2023/assets/125881959/6e168588-6af5-44fa-8721-9e3c23f5092f" width="70%" height="50%" title="px(픽셀) 크기 설정" alt="Screenshot from 2023-07-11 13-09-46"></img>
 
+<<<<<<< HEAD
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765

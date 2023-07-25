@@ -9,6 +9,10 @@ Buttons::Buttons(QObject *parent) : QObject(parent)
         usleep(10);
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 std::string readButtonKey() {
     std::string filePath = "../../../HSM/button_key.txt";	
     std::ifstream file(filePath);
@@ -38,10 +42,19 @@ std::string xorWithKey(const std::string& value, const std::string& key) {
     return result;
 }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 void Buttons::adjustButtons(QString clickedButton)
 {
     int result;
     CommonAPI::CallStatus callStatus;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     
     std::string key = readButtonKey();
 
@@ -51,5 +64,14 @@ void Buttons::adjustButtons(QString clickedButton)
 
     std::cout << "Click : " << clickedButtonStdString << std::endl;
     myProxy->clickButtons(xoredClick, callStatus, result);
+<<<<<<< HEAD
+=======
+=======
+    std::string clickedButtonStdString = clickedButton.toStdString();
+
+    std::cout << "Click : " << clickedButtonStdString << std::endl;
+    myProxy->clickButtons(clickedButtonStdString, callStatus, result);
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     std::cout << "Check error: '" << result << "'\n";
 }

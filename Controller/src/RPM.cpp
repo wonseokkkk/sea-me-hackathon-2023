@@ -9,6 +9,10 @@ RPM::RPM(QObject *parent) : QObject(parent)
         usleep(10);
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 int readRPMKey() {
     std::string filePath = "../../../HSM/rpm_key.txt"; // 파일 경로 수정 필요
     std::ifstream file(filePath);
@@ -30,11 +34,20 @@ int readRPMKey() {
 }
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 void RPM::adjustRPM(int scrollValue)
 {
     int result;
     CommonAPI::CallStatus callStatus;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     int key = readRPMKey();
 
     int offvalue = scrollValue + 12341;
@@ -44,5 +57,12 @@ void RPM::adjustRPM(int scrollValue)
     std::cout << "offRPM : " << offvalue << std::endl;
     std::cout << "xorRPM : " << xoredRPM << std::endl;
     myProxy->updateRPM(xoredRPM, callStatus, result);
+<<<<<<< HEAD
+=======
+=======
+    std::cout << "RPM : " << scrollValue << std::endl;
+    myProxy->updateRPM(scrollValue, callStatus, result);
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     std::cout << "Check error: '" << result << "'\n";
 }

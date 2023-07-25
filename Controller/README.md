@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# Execute Controller
+
+<pre>
+<code>
+cd ~
+git clone https://github.com/AveesLab/sea-me-hackathon-2023.git
+cd sea-me-hackathon-2023/Controller/src
+qmake .
+make -j2
+./controller
+</code>
+</pre>
+<br><br>
+<img src="https://github.com/AveesLab/sea-me-hackathon-2023/assets/125881959/52607ba3-f34c-420c-a8e1-aba5231c47f7" width="70%" height="50%" title="px(픽셀) 크기 설정" alt="execontroller"></img><br><br>
+=======
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 # Controller Settings
 You can run two executables [simultaneously on one device](#process-to-process-vsomeip-communication).<br>
 The json file is only required when applying communication between devices.<br>
@@ -85,6 +104,10 @@ chmod +x do_controller.sh // Commands with 'do_~.sh' are intended to be executed
 ./do_controller.sh
 ```
 
+<<<<<<< HEAD
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
 
 ### Controller display

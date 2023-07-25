@@ -3,6 +3,13 @@ import QtQuick.Controls 2.2
 import com.seame.Speed 1.0
 import com.seame.Buttons 1.0
 import com.seame.RPM 1.0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import Qt.labs.folderlistmodel 2.0
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
 ApplicationWindow {
     visible: true
@@ -24,33 +31,121 @@ ApplicationWindow {
         id: rpm
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    Image
+    {
+        id : controlGrey
+        source : "image/controlBackGrey.png"
+        anchors.fill: parent
+
+    }
+
+    Slider {
+        id: speedBar
+        width: 500
+        height: 219
+        rotation: 270
+        anchors.verticalCenterOffset: -101
+=======
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     Slider {
         id: speedBar
         width: 631
         height: 219
         rotation: 270
         anchors.verticalCenterOffset: -26
+<<<<<<< HEAD
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
         anchors.horizontalCenterOffset: -236
         from: 0
         to: 260
         value: 0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        property var cruiseValue : 0
+
+        onValueChanged: {
+            if(clickedButton==="P")
+            {
+                speed.adjustSpeed((0))
+                speedBar.value=0
+            }
+
+            if(!buttonCruise.isToggled)
+            {
+
+
+
+                if(clickedButton==="N")
+                {
+                    speedBar.value=speedBar.cruiseValue
+                }
+                else
+                {
+                    speed.adjustSpeed(speedBar.value);
+                    cruiseValue=speedBar.value
+                }
+
+            }
+            else
+            {
+                speedBar.value=speedBar.cruiseValue
+            }
+
+
+
+        }
+
+        anchors.centerIn: parent
+
+
+
+
+=======
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
         onValueChanged: {
             speed.adjustSpeed(speedBar.value);
         }
 
         anchors.centerIn: parent
+<<<<<<< HEAD
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     }
 
     Slider {
         id: rpmBar
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        width: 500
+        height: 219
+        rotation: 270
+        anchors.verticalCenterOffset: -100
+        anchors.horizontalCenterOffset: 231
+        from: 0
+        to: 6000
+=======
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
         width: 631
         height: 219
         rotation: 270
         anchors.verticalCenterOffset: -26
         anchors.horizontalCenterOffset: 231
         from: 0
+<<<<<<< HEAD
         to: 6000
+=======
+        to: 8000
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
         value: 0
 
         onValueChanged: {
@@ -62,6 +157,14 @@ ApplicationWindow {
 
     Column {
         id: orderButtons
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        anchors.verticalCenterOffset: -81
+        anchors.horizontalCenterOffset: 0
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
         anchors.centerIn: parent
         spacing: 10
 
@@ -71,6 +174,16 @@ ApplicationWindow {
             onClicked: {
                 buttons.adjustButtons("P");
                 clickedButton = "P";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                buttonCruise.isToggled=false
+                source: buttonCruise.isToggled ? "image/onCruise.png" : "image/offCruise.png" // Use the state here
+                speed.adjustSpeed((0))
+                speedBar.value=0
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
             }
             width: 100
             height: 100
@@ -98,6 +211,13 @@ ApplicationWindow {
             onClicked: {
                 buttons.adjustButtons("R");
                 clickedButton = "R";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                buttonCruise.isToggled=false
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
             }
             width: 100
             height: 100
@@ -125,6 +245,13 @@ ApplicationWindow {
             onClicked: {
                 buttons.adjustButtons("N");
                 clickedButton = "N";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                buttonCruise.isToggled=false
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
             }
             width: 100
             height: 100
@@ -176,8 +303,18 @@ ApplicationWindow {
     Button {
         id: buttonWeather
         property bool isToggled: false
+<<<<<<< HEAD
         x: 354
         y: 826 // Add this line
+=======
+<<<<<<< HEAD
+        x: 372
+        y: 691 // Add this line
+=======
+        x: 354
+        y: 826 // Add this line
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
         onClicked: {
             buttons.adjustButtons("Weather");
@@ -201,7 +338,15 @@ ApplicationWindow {
         id: buttonWarn
         property bool isToggled: false
         x: 590
+<<<<<<< HEAD
         y: 826 // Add this line
+=======
+<<<<<<< HEAD
+        y: 681 // Add this line
+=======
+        y: 826 // Add this line
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
         onClicked: {
             buttons.adjustButtons("Warn");
@@ -224,8 +369,18 @@ ApplicationWindow {
     Button {
         id: buttonLight
         property bool isToggled: false
+<<<<<<< HEAD
         x: 771
         y: 816 // Add this line
+=======
+<<<<<<< HEAD
+        x: 772
+        y: 671 // Add this line
+=======
+        x: 771
+        y: 816 // Add this line
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
         onClicked: {
             buttons.adjustButtons("Light");
@@ -236,8 +391,14 @@ ApplicationWindow {
 
         contentItem: Image {
             id: starImage
+<<<<<<< HEAD
             width: 100
             height: 100
+            source: buttonLight.isToggled ? "image/on.png" : "image/off.png" // Use the state here
+=======
+<<<<<<< HEAD
+            width: 90
+            height: 90
             source: buttonLight.isToggled ? "image/on.png" : "image/off.png" // Use the state here
         }
 
@@ -246,6 +407,203 @@ ApplicationWindow {
         }
     }
 
+
+    Button {
+            id: ultrasonic
+            property bool isToggled: false
+            x: 109
+            y: 154 // Add this line
+
+            onClicked: {
+                buttons.adjustButtons("sonic");
+                isToggled = !isToggled; // This line toggles the state
+            }
+            width: 200
+            height: 120
+
+            contentItem: Image {
+                id: ultra
+                width: 100
+                height: 100
+                source: ultrasonic.isToggled ? "image/ultra.png" : "image/untra.png" // Use the state here
+            }
+
+            background: Rectangle {
+                color: "transparent"
+            }
+        }
+
+        Timer {
+            id: fileReadTimer
+            interval: 2000 // 5초마다 파일을 읽습니다.
+            running: true
+            repeat: true
+
+            onTriggered: {
+                var file = new XMLHttpRequest();
+                file.open("GET", "file:///home/sea/data.txt");
+                file.onreadystatechange = function() {
+                    if (file.readyState === XMLHttpRequest.DONE && file.status === 200) {
+                        var lines = file.responseText.split('\n');
+                        var currentLine = 0;
+                        for (var i = 0; i < lines.length; i++) {
+                            var value = parseInt(lines[i]);
+                            if (!isNaN(value) && value <= 50) {
+                                ultrasonic.clicked();
+                                break;
+                            }
+                        }
+                    }
+                }
+                file.send();
+            }
+        }
+
+
+    Button {
+        id: buttonCruise
+        property bool isToggled: false
+        x: 950
+        y: 680 // Add this line
+
+        onClicked: {
+            if(clickedButton==="D" && !buttonModeChange.isToggled)
+           {
+                buttons.adjustButtons("Cruise");
+                isToggled = !isToggled; // This line toggles the state
+            }
+
+        }
+
+        width: 200
+        height: 120
+
+        contentItem: Image {
+            id: cruiseImage
+            width: 100
+            height: 100
+            source: buttonCruise.isToggled ? "image/onCruise.png" : "image/offCruise.png" // Use the state here
+        }
+
+        background: Rectangle {
+            color: "transparent"
+        }
+    }
+
+    Button {
+        id: buttonModeChange
+        property bool isToggled: false
+        x: 100
+        y: 680 // Add this line
+
+        onClicked: {
+
+            buttons.adjustButtons("modeChange");
+            isToggled = !isToggled; // This line toggles the state
+            buttonCruise.isToggled=false
+
+
+        }
+
+        width: 200
+        height: 120
+
+        contentItem: Image {
+            id: modeImage
+            width: 100
+            height: 100
+            source: buttonModeChange.isToggled ? "image/1217.png" : "image/1217r.png" // Use the state here
+=======
+            width: 100
+            height: 100
+            source: buttonLight.isToggled ? "image/on.png" : "image/off.png" // Use the state here
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
+        }
+
+        background: Rectangle {
+            color: "transparent"
+        }
+    }
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+    Button {
+        id: autodrive
+        property bool isToggled: false
+        x: 1495
+        y: 680 // Add this line
+
+        onClicked: {
+            buttons.adjustButtons("Autodrive");
+            isToggled = !isToggled; // This line toggles the state
+        }
+        width: 200
+        height: 120
+
+        contentItem: Image {
+            id: autodrivveImage
+
+            width: 100
+            height: 100
+            source: autodrive.isToggled ? "image/Autodrive_on.png" : "image/Autodrive_off.png"
+        }
+        background: Rectangle {
+            color: "transparent"
+        }
+    }
+
+
+
+    Button {
+        id: buttonStateChange
+        property bool isToggled: false
+        x: 1185
+        y: 680 // Add this line
+
+        onClicked: {
+
+            buttons.adjustButtons("stateChange");
+            isToggled = !isToggled; // This line toggles the state
+
+
+
+        }
+
+        width: 200
+        height: 120
+
+        contentItem: Image {
+            id: autoImage
+            x: 100
+            y: 150
+            width: 100
+            height: 100
+            source: buttonStateChange.isToggled ? "image/bu1.png" : "image/bu2.png" // Use the state here
+        }
+
+        background: Rectangle {
+            color: "transparent"
+        }
+    }
+
+
+
+    TextEdit {
+        id: textEdit
+        x: 128
+        y: 59
+        width: 80
+        height: 20
+        font.pixelSize: 12
+    }
+}
+
+
+=======
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     Text {
         id: text1
         x: 350
@@ -264,3 +622,7 @@ ApplicationWindow {
         font.pixelSize: 36
     }
 }
+<<<<<<< HEAD
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765

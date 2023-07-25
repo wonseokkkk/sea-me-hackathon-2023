@@ -2,8 +2,17 @@
 #define SPEED_H
 
 #include <QObject>
+<<<<<<< HEAD
 #include <fstream>
 #include <cstdlib>
+=======
+<<<<<<< HEAD
+#include <fstream>
+#include <cstdlib>
+=======
+#include <iostream>
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 
 
 #include <iostream>

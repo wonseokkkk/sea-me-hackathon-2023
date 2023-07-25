@@ -3,9 +3,21 @@
 
 #include <QObject>
 #include <iostream>
+<<<<<<< HEAD
 #include <cstdlib>
 #include <fstream>
 
+=======
+<<<<<<< HEAD
+#include <cstdlib>
+#include <fstream>
+
+=======
+
+
+#include <iostream>
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
 #include <string>
 #include <unistd.h>
 #include <CommonAPI/CommonAPI.hpp>

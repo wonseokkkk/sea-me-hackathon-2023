@@ -7,5 +7,24 @@
         <file>image/warn1.png</file>
         <file>image/weather.png</file>
         <file>image/weather1.png</file>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <file>image/offCruise.png</file>
+        <file>image/onCruise.png</file>
+        <file>image/1217.png</file>
+        <file>image/controlBackGrey.png</file>
+        <file>image/1217r.png</file>
+        <file>image/bu1.png</file>
+        <file>image/bu2.png</file>
+        <file>image/auto.png</file>
+        <file>image/navigate.png</file>
+        <file>image/ultra.jpg</file>
+        <file>image/untra.png</file>
+        <file>image/Autodrive_off.png</file>
+        <file>image/Autodrive_on.png</file>
+=======
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     </qresource>
 </RCC>

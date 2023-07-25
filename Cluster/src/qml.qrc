@@ -1,12 +1,50 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+<<<<<<< HEAD
         <file>image/back.png</file>
+=======
+<<<<<<< HEAD
+=======
+        <file>image/back.png</file>
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
         <file>image/car1.png</file>
         <file>image/dial.png</file>
         <file>image/rpm.png</file>
         <file>image/star.png</file>
         <file>image/volk.png</file>
         <file>image/warning.png</file>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <file>image/black.png</file>
+        <file>image/cover.png</file>
+        <file>image/tmp_14.png</file>
+        <file>image/coverr.png</file>
+        <file>image/tmp_20.png</file>
+        <file>image/tmp_26.png</file>
+        <file>image/tmp_27.png</file>
+        <file>image/tmp_22.png</file>
+        <file>image/cover_re.png</file>
+=======
+<<<<<<< HEAD
+        <file>image/karina.png</file>
+        <file>image/black.png</file>
+        <file>image/cover_re.png</file>
+        <file>image/tmp_14.png</file>
+        <file>image/tmp_20.png</file>
+        <file>image/tmp_27.png</file>
+        <file>../../../Downloads/Removal-219.png</file>
+        <file>../../../Downloads/Removal-413.png</file>
+        <file>image/Removal-219.png</file>
+        <file>image/Removal-413.png</file>
+        <file>image/ultra.png</file>
+        <file>image/Removal-289.png</file>
+        <file>image/Removal-661.png</file>
+=======
+>>>>>>> 068a4b27902e3d95af8c021972a42e3725fb91dc
+>>>>>>> 232b46fc3361de41432b73acd63e60a9c0134d96
+>>>>>>> 7626f1dca45b2eefd9be3d4e654ae3e4a6b17765
     </qresource>
 </RCC>
